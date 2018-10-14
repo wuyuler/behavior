@@ -1,7 +1,11 @@
 package com.yjt.demo.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.sql.Time;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 @Entity
 public class NetUser {
@@ -17,9 +21,33 @@ public class NetUser {
     private String city;
     private String isCity;
 
+//    @ElementCollection
+////    // 生成的表的主键Map.key+EmployeeMap_id
+////    @CollectionTable(name = "net_data_url")
+////    @MapKeyColumn(name = "data_date")
+////    @Column(name = "data_url",columnDefinition = "TEXT")
+////    private Map<String, String> others = new HashMap<String, String>();
+////
+////    @ElementCollection
+////    // 生成的表的主键Map.key+EmployeeMap_id
+////    @CollectionTable(name = "net_data_TP")
+////    @MapKeyColumn(name = "data_L_start")
+////    @Column(name = "data_TP",columnDefinition = "TEXT")
+////    private Map<String, String> others2 = new HashMap<String, String>();
+
+//    @OneToMany(cascade = {CascadeType.ALL},fetch=FetchType.LAZY,mappedBy = "user")//这样会导致一个超级大的集合,内存直接报了
+//    public Set<Time_start> list_time_start=new HashSet<>();
 
     public NetUser() {
     }
+
+//    public Set<Time_start> getList_time_start() {
+//        return list_time_start;
+//    }
+//
+//    public void setList_time_start(Set<Time_start> list_time_start) {
+//        this.list_time_start = list_time_start;
+//    }
 
     public String getId() {
         return id;

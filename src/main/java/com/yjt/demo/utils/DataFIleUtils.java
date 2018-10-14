@@ -1,11 +1,18 @@
 package com.yjt.demo.utils;
 
+import com.yjt.demo.domain.NetUser;
+import com.yjt.demo.domain.Time_add;
+import com.yjt.demo.domain.Time_start;
+import com.yjt.demo.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.io.*;
 import java.util.*;
 
 
 public class DataFIleUtils {
     public static String basePath = "C:\\Users\\Administrator\\Desktop\\data\\behavior";
+
 
     /**
      * 获取统计的所有日期
@@ -63,6 +70,10 @@ public class DataFIleUtils {
         }
         return  allAppName;
     }
+
+
+
+
     public static HashMap<String, HashMap<String,String>> getAllFilePath(){
        File file1=new File(basePath);
        HashMap<String, HashMap<String,String>> allData = new HashMap<String, HashMap<String, String>>();
@@ -167,5 +178,11 @@ public class DataFIleUtils {
         return fileNames;
     }
 
+    public DataFIleUtils() {
+    }
+
+
 }
+
+
 

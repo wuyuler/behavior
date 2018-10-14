@@ -35,6 +35,8 @@ public class NetDataService {
        return DataFIleUtils.getAllTime();
     }
 
+
+
     public void updateData(){
 
         List<NetData> netDataList=netDataRepository.findAll();

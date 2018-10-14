@@ -2,9 +2,15 @@ package com.yjt.demo.controller;
 
 
 import com.sun.xml.internal.bind.v2.model.core.ID;
+import com.yjt.demo.domain.Time_add;
+import com.yjt.demo.domain.Time_start;
 import com.yjt.demo.enums.UserEnum;
+import com.yjt.demo.repository.ProcessNameRepository;
+import com.yjt.demo.repository.TimeAddRepository;
+import com.yjt.demo.repository.TimeStartRepository;
 import com.yjt.demo.repository.UserRepository;
 import com.yjt.demo.domain.NetUser;
+import com.yjt.demo.service.ProcessNameService;
 import com.yjt.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -14,10 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 @RestController
@@ -28,6 +31,24 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private TimeStartRepository timeStartRepository;
+    @Autowired
+    private TimeAddRepository timeAddRepository;
+    @Autowired
+    private ProcessNameService processNameService;
+
+    //插入所有数据
+    @GetMapping("/users/insertAllData")
+    public void insertAllData(){
+        userService.insertAllData();
+    }
+    @GetMapping(value = "/users/timeValue/insert")
+    public void insertTimeValue(){//测试插入一条,在特定时间以及相关行为的数据
+        processNameService.insertDataFromFile();
+
+    }
 
     @GetMapping(value = "/users")
     public List<NetUser> userList(){return userRepository.findAll();}
