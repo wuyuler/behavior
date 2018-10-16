@@ -12,4 +12,5 @@ public enum UserEnum {
     public String getField() {
         return field;
     }
+    //这是我修改的地方
 }
