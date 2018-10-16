@@ -8,8 +8,7 @@ import javax.persistence.*;
 public class Time_start {
 
     @Id
-    @GeneratedValue
-    private int id;
+    private String id;
 
     @Column(columnDefinition = "TEXT")
     private String time_start;
@@ -25,13 +24,7 @@ public class Time_start {
     public Time_start() {
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
 
 

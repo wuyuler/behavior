@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Time_add {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(columnDefinition = "TEXT")
