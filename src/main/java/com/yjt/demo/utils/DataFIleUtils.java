@@ -30,23 +30,23 @@ public class DataFIleUtils {
     }
 
 
-    static public List<String> getALlAppName(){
-        final HashMap<String, HashMap<String, String>> allFilePath = DataFIleUtils.getAllFilePath();
-        List<String> allAppName = new ArrayList<String>();
-        for (HashMap<String, String> v1:allFilePath.values()
-        ) {
-            for (String s:v1.values()
-            ) {
-                List<String> appNameByRegex = RegexUtils.getAppNameByRegex(s);
-                for (String appName:appNameByRegex
-                     ) {
-                    allAppName.add(appName);
-                }
-            }
-
-        }
-    return allAppName;
-    }
+//    static public List<String> getALlAppName(){
+//        final HashMap<String, HashMap<String, String>> allFilePath = DataFIleUtils.getAllFilePath();
+//        List<String> allAppName = new ArrayList<String>();
+//        for (HashMap<String, String> v1:allFilePath.values()
+//        ) {
+//            for (String s:v1.values()
+//            ) {
+//                List<String> appNameByRegex = RegexUtils.getAppNameByRegex(s);
+//                for (String appName:appNameByRegex
+//                     ) {
+//                    allAppName.add(appName);
+//                }
+//            }
+//
+//        }
+//    return allAppName;
+//    }
 
     /**
      * 遍历所有txt文件,获取app的名字
