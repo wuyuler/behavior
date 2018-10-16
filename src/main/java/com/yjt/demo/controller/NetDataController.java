@@ -23,7 +23,7 @@ public class NetDataController {
         netDataService.updateData();
     }
 
-    @PostMapping(value = "/netdatas/getAppppp")
+    @PostMapping(value = "/netdatas/getApp2")
     public NetData getNetDataByName(@RequestParam( "appName") String appName ){
        return netDataRepository.findById(appName).orElse(null);
     }
