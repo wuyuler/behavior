@@ -28,24 +28,9 @@ public class UserService {
     @Autowired
     TimeAddRepository timeAddRepository;
 
-    @PersistenceContext
-    protected EntityManager em;
 
-    @Transactional
-    public void batchInsert(List list) {
-        try {
-            for (int i = 0; i < list.size(); i++) {
-                em.persist(list.get(i));
-            }
 
-            em.flush();
-            em.clear();
-            System.out.println("save to DB success,list is {}"+list.toString());
-        } catch (Exception e) {
-            System.out.println("batch insert data failuer.");
-            e.printStackTrace();
-        }
-    }
+
 
 
 
