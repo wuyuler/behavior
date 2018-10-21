@@ -13,7 +13,7 @@ public class NetUser {
     @Id
     private String id;
     private String gender;
-    private String birthday;
+    private int birthday;
     private String edu;
     private String job;
     private String income;
@@ -65,11 +65,11 @@ public class NetUser {
         this.gender = gender;
     }
 
-    public String getBirthday() {
+    public int getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(int birthday) {
         this.birthday = birthday;
     }
 
