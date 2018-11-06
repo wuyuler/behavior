@@ -38,6 +38,21 @@ public class NetUser {
 //    @OneToMany(cascade = {CascadeType.ALL},fetch=FetchType.LAZY,mappedBy = "user")//这样会导致一个超级大的集合,内存直接报了
 //    public Set<Time_start> list_time_start=new HashSet<>();
 
+    @Override
+    public String toString() {
+        return "NetUser{" +
+                "id='" + id + '\'' +
+                ", gender='" + gender + '\'' +
+                ", age=" + (2012-birthday) +
+                ", edu='" + edu + '\'' +
+                ", job='" + job + '\'' +
+                ", income='" + income + '\'' +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", isCity='" + isCity + '\'' +
+                '}';
+    }
+
     public NetUser() {
     }
 

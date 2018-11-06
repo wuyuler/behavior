@@ -14,6 +14,11 @@ public class Appcount {
     private String job;
     private String province;
     private Short birthday;
+    private int lentime;
+
+
+
+
 
     @Id
     @Column(name = "id")
@@ -26,6 +31,15 @@ public class Appcount {
         this.id = id;
     }
 
+
+    @Basic
+    @Column(name = "lentime")
+    public int getLentime() {
+        return lentime;
+    }
+    public void setLentime(int lentime) {
+        this.lentime = lentime;
+    }
     @Basic
     @Column(name = "userid")
     public String getUserid() {

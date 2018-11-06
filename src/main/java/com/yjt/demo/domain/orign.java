@@ -7,10 +7,33 @@ import java.sql.Time;
 @Entity
 public class orign {
 
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int num;
+
+
     private String userid;
+
+    private Date date;
+    private Time starttime;
+    private int time;
+    private int lenTime;
+    public int getLenTime() {
+        return lenTime;
+    }
+
+    public void setLenTime(int lenTime) {
+        this.lenTime = lenTime;
+    }
+
+
+    @Column(name = "progress", columnDefinition = "TEXT")
+    private String progress;
+    @Column(name="url",columnDefinition = "TEXT")
+    private String url;
+    public void orign(){
+
+    }
 
     public String getUserid() {
         return userid;
@@ -36,22 +59,12 @@ public class orign {
         this.starttime = starttime;
     }
 
-    private Date date;
-    private Time starttime;
-    private int time;
-    @Column(name = "progress", columnDefinition = "TEXT")
-    private String progress;
-    @Column(name="url",columnDefinition = "TEXT")
-    private String url;
-    public void orign(){
-
-    }
-    public int getId() {
-        return id;
+    public int getNum() {
+        return num;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setNum(int num) {
+        this.num = num;
     }
 
     public String getUrl() {
