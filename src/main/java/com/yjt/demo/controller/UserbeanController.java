@@ -41,7 +41,7 @@ public class UserbeanController {
     public void kmeans(){
         List<Userbean> list=userbeanRepository.findAll();
         UserCluster userCluster=new UserCluster();
-        userCluster.setK(4);
+        userCluster.setK(6);
         for(Userbean userbean:list)
             userCluster.addRecord(userbean);
         long a = System.currentTimeMillis();
@@ -51,12 +51,12 @@ public class UserbeanController {
             System.out.println("第"+(i+1)+"类"+"=================================");
             for(int j=0;j<cresult.get(i).size();j++){
                 Userbean userbean=cresult.get(i).get(j);
-                System.out.println(userRepository.findById(userbean.getUserid()).toString()+"nettime:"+userbean.getNettime());
+                System.out.println(userbean.toString());
             }
         }
 
         for(int i=0;i<center.size();i++)
-            System.out.println("第"+i+"中心为:"+center.get(i).toString()+"数量"+cresult.get(i).size());
+            System.out.println(center.get(i).toString());
         //System.out.println(JsonUtil.parseJson(center));
         long b = System.currentTimeMillis();
         System.out.println("耗时：" + (b - a) + "ms");

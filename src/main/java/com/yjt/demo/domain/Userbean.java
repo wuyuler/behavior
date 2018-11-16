@@ -35,14 +35,11 @@ public class Userbean {
 
     @Override
     public String toString() {
-        return "Userbean{" +
-                "userid='" + userid + '\'' +
-                ", age=" + age +
+        return "age=" + age +
                 ", job=" + job +
                 ", income=" + income +
                 ", edu=" + edu +
-                ", nettime=" + nettime +
-                '}';
+                ", nettime=" + nettime;
     }
 
     public Userbean(int age, int job, int income, int edu, int nettime) {
