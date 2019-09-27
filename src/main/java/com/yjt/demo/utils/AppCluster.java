@@ -15,7 +15,7 @@ public class AppCluster extends KMeansClustering<appinfoma> {
     @Override
     public boolean equals(appinfoma o1, appinfoma o2) {
 
-         
+
         return o1.getSocial()==o2.getSocial()&&o1.getOffice()==o2.getOffice()&&o1.getMusic()==o2.getMusic()
                 &&o1.getMovie()==o2.getMovie()&&o1.getMoney()==o2.getMoney()&&o1.getGame()==o2.getGame()&&o1.getTools()==o2.getTools();
     }

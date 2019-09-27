@@ -20,6 +20,7 @@ public class AppcountController {
     @PostMapping("appcount/getTopApp")
     public Map<String,List> getTopApp(@RequestParam("userid") String userid,@RequestParam("num")int num){
         List<Appcount> list=appcountRepository.findAllByUseridOrderByCountDesc(userid);
+        if(list==null) System.out.println("wwwwww");
         List<String> appname=new ArrayList<>();
         List<Long> times=new ArrayList<>();
         for(Appcount appcount:list){

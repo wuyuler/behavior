@@ -15,7 +15,7 @@ public class appinfomaController {
     @Autowired
     appinfomaRepository appinfomaRepo;
 
-    @GetMapping("/appinfoma/kmeans")
+    @GetMapping("/appinfoma/Kmeans")
     void kmeans(){
         List<appinfoma> list=appinfomaRepo.findAll();
         AppCluster appCluster=new AppCluster();

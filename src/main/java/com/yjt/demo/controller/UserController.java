@@ -14,10 +14,7 @@ import com.yjt.demo.service.ProcessNameService;
 import com.yjt.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.*;
@@ -52,7 +49,40 @@ public class UserController {
 
     @GetMapping(value = "/users")
     public List<NetUser> userList(){return userRepository.findAll();}
+    @GetMapping(value = "/users/getUserInfoByPage")
+    public Map getUserInfoByPage(@RequestParam("page") int page,@RequestParam("pagesize") int pagesize,@RequestParam("name") String name){
 
+        List<NetUser> arrayList= userRepository.findAll();
+        List<NetUser> reslist=new ArrayList<>();
+        int size;
+        if(name.isEmpty()){
+            size=arrayList.size();
+            int count=pagesize;
+            for(int i=pagesize*(page-1);i<arrayList.size();i++){
+                reslist.add(arrayList.get(i));
+                count--;
+                if(count==0)break;
+            }
+        }
+        else{
+            int count=0;
+            for(NetUser netUser:arrayList){
+
+                if(netUser.getId().equals(name)){
+                    reslist.add(netUser);
+                    count++;
+                }
+
+            }
+            size=count;
+        }
+
+
+        Map res=new HashMap();
+        res.put("total",size);
+        res.put("userlist",reslist);
+        return  res;
+    }
     @GetMapping(value = "/users/getGender")
     public List<Map>  getGender(){
        return userService.getResult("gender");
